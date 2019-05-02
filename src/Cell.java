@@ -2,7 +2,6 @@ public class Cell {
 
     private int status;
 
-
     public Cell() {
         this.status = 1;
     }

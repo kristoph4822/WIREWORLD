@@ -1,26 +1,24 @@
-import java.io.FileNotFoundException;
-import java.util.NoSuchElementException;
+import java.awt.*;
 
 public class Test {
 
     public static void main(String[] args) {
 
-        try {
-            Board x = new Board("src/plik1");
-            genGenerator.nextGeneration(x);
-            genGenerator.nextGeneration(x);
-            genGenerator.nextGeneration(x);
-            genGenerator.nextGeneration(x);
+        Board x;
 
-            x.print2screen();
+        if(args.length > 0 ) x = new Board(args[0]);
+        else x = new Board("resources/" + "plik.txt");
 
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Nie znaleziono pliku do odczytu.");
-        }
-
-        catch (NoSuchElementException e) {
-            System.out.println("Zły format danych w pliku do odczytu.");}
+        EventQueue.invokeLater(new Runnable()
+        {
+            public void run()
+            {
+                WWFrame frame = new WWFrame(x);
+            }
+        });
 
     }
+
+
+
 }

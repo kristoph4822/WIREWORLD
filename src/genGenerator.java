@@ -50,7 +50,7 @@ public class genGenerator {
 
     }
 
-    public static void nextGeneration (Board b){
+    public static void generateNext (Board b){
 
         Cell[][] tmp = new Cell[b.getHEIGHT()][b.getWIDTH()];
 
