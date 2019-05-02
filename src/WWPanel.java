@@ -12,7 +12,6 @@ public class WWPanel extends JPanel implements ActionListener {
 
     public WWPanel(Board b){
         this.brd = b;
-        this.setBackground(Color.GRAY);
     }
 
     public void paintComponent (Graphics g){
@@ -25,7 +24,7 @@ public class WWPanel extends JPanel implements ActionListener {
         for(int i=0; i<brd.getHEIGHT(); i++)
             for(int j = 0; j<brd.getWIDTH(); j++){
                 switch(brd.getBoard()[i][j].getStatus()){
-                    case 1: g2.setPaint(Color.BLACK); break;
+                    case 1: g2.setPaint(Color.DARK_GRAY); break;
                     case 2: g2.setPaint(Color.CYAN); break;
                     case 3: g2.setPaint(Color.red); break;
                     case 4: g2.setPaint(Color.YELLOW); break;
@@ -41,7 +40,11 @@ public class WWPanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.brd.print2file("Saved_Generation.txt");
+        if(e.getSource() == Save2File){
+        this.brd.print2file("Saved_Generation.txt");}
+
+        else if(e.getSource() == NextGen){
+        this.repaint();}
     }
 }
 

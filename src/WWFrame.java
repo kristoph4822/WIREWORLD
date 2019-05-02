@@ -3,12 +3,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class WWFrame extends JFrame implements ActionListener {
+public class WWFrame extends JFrame {
+
+    WWPanel panel;
 
     public WWFrame(Board brd){
 
-        WWPanel panel = new WWPanel(brd);
-        panel.setBackground(Color.GRAY);
+        panel = new WWPanel(brd);
+        panel.setBackground(Color.BLACK);
         add(panel);
 
         setTitle("Wire World");
@@ -17,14 +19,9 @@ public class WWFrame extends JFrame implements ActionListener {
         setSize(1000,600);
 
         panel.NextGen.addActionListener(brd);
-        panel.NextGen.addActionListener(this);
+        panel.NextGen.addActionListener(panel);
         panel.Save2File.addActionListener(panel);
 
 
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        this.repaint();
     }
 }

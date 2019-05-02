@@ -13,7 +13,7 @@ public class Test {
         {
             public void run()
             {
-                WWFrame frame = new WWFrame(x);
+                WWFrame game = new WWFrame(x);
             }
         });
 
