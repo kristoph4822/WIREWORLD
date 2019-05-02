@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="WireWorld:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/WireWorld_jar</output-path>
+    <root id="archive" name="WireWorld.jar">
+      <element id="module-output" name="WireWorld" />
+    </root>
+  </artifact>
+</component>
