@@ -18,10 +18,5 @@ public class WWFrame extends JFrame {
         setVisible(true);
         setSize(1000,600);
 
-        panel.NextGen.addActionListener(brd);
-        panel.NextGen.addActionListener(panel);
-        panel.Save2File.addActionListener(panel);
-
-
     }
 }
