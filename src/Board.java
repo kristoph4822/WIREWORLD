@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class Board implements ActionListener{
 
-    private static final int WIDTH = 30;
-    private static final int HEIGHT = 30;
+    private static final int WIDTH = 20;
+    private static final int HEIGHT = 10;
 
     private Cell[][] board = new Cell[getHEIGHT()][getWIDTH()];
 

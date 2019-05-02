@@ -16,7 +16,7 @@ public class WWFrame extends JFrame {
         setTitle("Wire World");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        setSize(1000,600);
+        setSize(1000,550);
 
     }
 }

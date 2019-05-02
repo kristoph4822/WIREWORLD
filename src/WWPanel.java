@@ -12,6 +12,7 @@ public class WWPanel extends JPanel implements ActionListener, MouseListener {
     public JButton NextGen = new JButton("Next Generation");
     public JButton Save2File = new JButton("Save to file");
     public JButton Clear = new JButton("Clear");
+    public JButton TypeBTN = new JButton("Connector");
 
     public WWPanel(Board b) {
         this.brd = b;
@@ -20,8 +21,8 @@ public class WWPanel extends JPanel implements ActionListener, MouseListener {
         Save2File.addActionListener(this);
         addMouseListener(this);
         Clear.addActionListener(this);
+        TypeBTN.addActionListener(this);
     }
-
     public void paintComponent(Graphics g) {
 
         g.setColor(getBackground());
@@ -49,12 +50,14 @@ public class WWPanel extends JPanel implements ActionListener, MouseListener {
                 g2.fill(rec);
             }
 
-        NextGen.setBounds(750, 150, 150, 50);
+        NextGen.setBounds(750, 100, 150, 50);
         this.add(NextGen);
-        Save2File.setBounds(750, 250, 150, 50);
+        Save2File.setBounds(750, 175, 150, 50);
         this.add(Save2File);
-        Clear.setBounds(750, 350, 150, 50);
+        Clear.setBounds(750, 250, 150, 50);
         this.add(Clear);
+        TypeBTN.setBounds(750,325, 150, 50);
+        this.add(TypeBTN);
     }
 
     @Override
@@ -69,9 +72,24 @@ public class WWPanel extends JPanel implements ActionListener, MouseListener {
                     brd.setCell(new Cell(), i, j);
         repaint();
         }
+        else if (e.getSource() == TypeBTN) {
+
+            if (TypeBTN.getText() == "Electron Head") {
+                TypeBTN.setText("Connector");
+
+            }
+            else if (TypeBTN.getText() == "Connector") {
+                TypeBTN.setText("Electron Tail");
+            }
+
+            else if (TypeBTN.getText() == "Electron Tail") {
+                TypeBTN.setText("Electron Head");
+            }
+        }
     }
 
     public void mousePressed(MouseEvent e) {
+
     }
 
     public void mouseReleased(MouseEvent e) {
@@ -90,7 +108,11 @@ public class WWPanel extends JPanel implements ActionListener, MouseListener {
                     if (e.getY() >= 100 + 26 * j && e.getY() <= 100 + 26 * j + 25) {
                         int st = brd.getCell(j, i).getStatus();
                         if (st == 1) {
-                            brd.setCell(new Cell(4), j, i);
+                            switch(TypeBTN.getText()){
+                                case "Connector": brd.setCell(new Cell(4), j, i); break;
+                                case "Electron Tail": brd.setCell(new Cell(3), j, i); break;
+                                case "Electron Head": brd.setCell(new Cell(2), j, i); break;
+                            }
                         } else {
                             brd.setCell(new Cell(1), j, i);
                         }
