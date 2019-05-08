@@ -105,7 +105,7 @@ public class WWPanel extends JPanel implements ActionListener, MouseListener {
         for (int i = 0; i < Board.getWIDTH(); i++) {
             if (e.getX() >= 100 + 27 * i && e.getX() <= 100 + 27 * i + 25) {
                 for (int j = 0; j < Board.getHEIGHT(); j++) {
-                    if (e.getY() >= 100 + 26 * j && e.getY() <= 100 + 26 * j + 25) {
+                    if (e.getY() >= 100 + 26 * j && e.getY() <= 100+ 26 * j + 25) {
                         int st = brd.getCell(j, i).getStatus();
                         if (st == 1) {
                             switch(TypeBTN.getText()){
