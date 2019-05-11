@@ -3,7 +3,7 @@ import java.awt.event.MouseListener;
 
 public class Mouse implements MouseListener {
     //where initialization occurs:
-    //Register for mouse events on blankArea and the panel.
+    //Register for mouse events on blankArea and the container.
 
 
     public void mousePressed(MouseEvent e) {

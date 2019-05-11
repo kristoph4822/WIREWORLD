@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.Rectangle2D;
 
-public class WWPanel extends JPanel implements ActionListener, MouseListener {
+public class Container extends JPanel implements ActionListener, MouseListener {
 
     Board brd;
     public JButton NextGen = new JButton("Next Generation");
@@ -14,7 +14,7 @@ public class WWPanel extends JPanel implements ActionListener, MouseListener {
     public JButton Clear = new JButton("Clear");
     public JButton TypeBTN = new JButton("Connector");
 
-    public WWPanel(Board b) {
+    public Container(Board b) {
         this.brd = b;
         NextGen.addActionListener(brd);
         NextGen.addActionListener(this);

@@ -59,10 +59,7 @@ public class genGenerator {
                 Cell c = new Cell (nextStatus(b, i, j));
                 tmp[i][j] = c;
             }
-
         b.setBoard(tmp);
-
-
     }
 
 }

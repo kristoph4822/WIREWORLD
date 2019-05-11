@@ -1,22 +1,26 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class WWFrame extends JFrame {
 
-    WWPanel panel;
+    Container2 container;
 
-    public WWFrame(Board brd){
-
-        panel = new WWPanel(brd);
-        panel.setBackground(Color.BLACK);
-        add(panel);
+    public WWFrame() {
 
         setTitle("Wire World");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-        setSize(1000,550);
+        setSize(1000, 550);
+        this.setVisible(true);
+        this.container = new Container2();
+    }
 
+        public void start(){
+            container.setBackground(Color.BLACK);
+            add(container);
+        }
+
+    public Container2 getContainer() {
+        return container;
     }
 }
+
