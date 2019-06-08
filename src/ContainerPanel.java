@@ -5,12 +5,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class Container2 extends JPanel implements ActionListener, MouseListener {
+public class ContainerPanel extends JPanel implements ActionListener, MouseListener {
 
     private ButtonPanel btnpanel = new ButtonPanel();
     private BoardPanel brdpanel = new BoardPanel();
 
-    public Container2(){
+    public ContainerPanel(){
 
         setBackground(getBackground());
         setBounds(0,0,1000,550);
@@ -48,15 +48,18 @@ public class Container2 extends JPanel implements ActionListener, MouseListener 
 
             if (btnpanel.getTypeBTN().getText() == "Electron Head") {
                 btnpanel.getTypeBTN().setText("Connector");
+                btnpanel.getTypeBTN().setBackground(Color.YELLOW);
 
-            }
-            else if (btnpanel.getTypeBTN().getText() == "Connector") {
+            } else if (btnpanel.getTypeBTN().getText() == "Connector") {
                 btnpanel.getTypeBTN().setText("Electron Tail");
+                btnpanel.getTypeBTN().setBackground(Color.red);
+
+            } else if (btnpanel.getTypeBTN().getText() == "Electron Tail") {
+                btnpanel.getTypeBTN().setText("Electron Head");
+                btnpanel.getTypeBTN().setBackground(Color.cyan);
             }
 
-            else if (btnpanel.getTypeBTN().getText() == "Electron Tail") {
-                btnpanel.getTypeBTN().setText("Electron Head");
-            }
+
         }
     }
 
@@ -74,9 +77,9 @@ public class Container2 extends JPanel implements ActionListener, MouseListener 
 
     public void mouseClicked(MouseEvent e) {
         for (int i = 0; i < Board.getWIDTH(); i++) {
-            if (e.getX() >= 100 + 27 * i && e.getX() <= 100 + 27 * i + 25) {
+            if (e.getX() >= BoardPanel.getBoardPanelBoarders() + (BoardPanel.getCellSize()+2) * i && e.getX() <= BoardPanel.getBoardPanelBoarders() + (BoardPanel.getCellSize()+2) * i + BoardPanel.getCellSize()) {
                 for (int j = 0; j < Board.getHEIGHT(); j++) {
-                    if (e.getY() >= 100 + 26 * j && e.getY() <= 100+ 26 * j + 25) {
+                    if (e.getY() >= BoardPanel.getBoardPanelBoarders() + (BoardPanel.getCellSize()+2) * j && e.getY() <= BoardPanel.getBoardPanelBoarders() + (BoardPanel.getCellSize()+2) * j + BoardPanel.getCellSize()) {
                         int st = brdpanel.getBrd().getCell(j, i).getStatus();
                         if (st == 1) {
                             switch(btnpanel.getTypeBTN().getText()){

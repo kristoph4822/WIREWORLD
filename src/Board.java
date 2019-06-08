@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Board {
 
-    private static final int WIDTH = 20;
-    private static final int HEIGHT = 10;
+    private static final int WIDTH = 40;
+    private static final int HEIGHT = 26;
 
     private Cell[][] board = new Cell[getHEIGHT()][getWIDTH()];
 
