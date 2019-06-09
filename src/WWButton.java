@@ -24,4 +24,8 @@ public class WWButton extends JButton {
         return BUTTON_WIDTH;
     }
 
+    public static int getButtonHeighth() {
+        return BUTTON_HEIGHT;
+    }
+
 }

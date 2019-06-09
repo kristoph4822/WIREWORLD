@@ -12,7 +12,8 @@ public class ButtonPanel extends JPanel {
     private WWButton Clear;
     private WWButton TypeBTN;
 
-    private BufferedImage image;
+    private JLabel title;
+    private JLabel authors;
 
     private static final int BUTTON_PANEL_BOARDERS = 100;
     private static final int BUTTON_PANEL_WIDTH = WWButton.getButtonWidth()+(2*BUTTON_PANEL_BOARDERS);
@@ -24,9 +25,23 @@ public class ButtonPanel extends JPanel {
         setBounds(WWFrame.getWindowWidth() - BUTTON_PANEL_WIDTH, 0 , BUTTON_PANEL_WIDTH , BoardPanel.getBoardPanelHeight());
         setBackground(Color.BLACK);
 
-        int x = WWFrame.getWindowWidth() - ButtonPanel.getButtonPanelWidth() + 50;
+        int x = WWFrame.getWindowWidth() - ButtonPanel.getButtonPanelWidth() + 70;
 
-        add(Box.createRigidArea(new Dimension(BUTTON_PANEL_BOARDERS + 15, 200)));
+        add(Box.createRigidArea(new Dimension(20, 100)));
+
+        title = new JLabel("WireWorld");
+        title.setFont(new Font("Consolas", Font.BOLD, 35));
+        title.setBackground(Color.BLACK);
+        title.setForeground(Color.WHITE);
+        this.add(title);
+
+        authors = new JLabel("by K.Maciejewski & H.Kunikowski");
+        authors.setFont(new Font("Consolas", Font.BOLD, 10));
+        authors.setBackground(Color.BLACK);
+        authors.setForeground(Color.WHITE);
+        this.add(authors);
+
+        add(Box.createRigidArea(new Dimension(BUTTON_PANEL_BOARDERS + 30, 50)));
         this.add(NextGen = new WWButton("Next Generation", x, 100));
 
         add(Box.createRigidArea(new Dimension(0, 50)));
@@ -43,18 +58,6 @@ public class ButtonPanel extends JPanel {
 
         add(Box.createRigidArea(new Dimension(0, 100)));
 
-    }
-
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-
-        try {
-            image = ImageIO.read(this.getClass().getResource("resources/wireworld.png"));
-            Image scaledImage = image.getScaledInstance(this.getWidth()-40, 55 ,Image.SCALE_SMOOTH);
-            g.drawImage(scaledImage, 15, 80, this);
-        } catch (IOException ex) {
-            System.exit(-6);
-        }
 
 
     }
