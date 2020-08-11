@@ -1,16 +1,11 @@
 # Wireworld
-Wireworld to automat komórkowy zaproponowany przez Briana Silvermana w roku 1987
+Wygląd aplikacji po uruchomieniu
+<img width="946" alt="welcome" src="https://user-images.githubusercontent.com/46055596/89938196-76475900-dc16-11ea-920a-366b68330cfd.png">
 
-### Zasada działania
-Komórka w Wireworld może znajdować się w jednym z czterech stanów:
-* pusta
-* głowa elektronu
-* ogon elektronu
-* przewodnik
+Aplikacja pozwala na:
+* wyświetlanie kolejnych generacji,
+* wczytanie i zapis generacji do pliku tekstowego,
+* dodanie dowolnej komórki na planszę,
+* wyczysczenie planszy.
 
-Upływ czasu przedstawiony jest w postaci dyskretnych kroków czasowych, czyli generacji. Komórka pusta na zawsze pozostaje w swoim stanie; inne komórki zachowują się w następujący sposób:
-* Głowa elektronu → ogon elektronu;
-* Ogon elektronu → przewodnik;
-* Przewodnik → głowa elektronu, ale tylko wtedy, gdy dokładnie 1 lub 2 komórki sąsiadujące są głowami elektronu.
-
-Stosowane sąsiedztwo to sąsiedztwo Moore’a, czyli sąsiadem jest każda komórka, która graniczy bokiem lub wierzchołkiem. 
+Więcej informacji zawartych jest w specyfikacji implementacyjnej i raporcie końcowym.
