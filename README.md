@@ -1,5 +1,5 @@
 # Wireworld
-Wygląd aplikacji po uruchomieniu
+Wygląd aplikacji po uruchomieniu:
 <img width="946" alt="welcome" src="https://user-images.githubusercontent.com/46055596/89938196-76475900-dc16-11ea-920a-366b68330cfd.png">
 
 Aplikacja pozwala na:
