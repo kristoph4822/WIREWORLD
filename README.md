@@ -8,4 +8,4 @@ Aplikacja pozwala na:
 * dodanie dowolnej komórki na planszę,
 * wyczysczenie planszy.
 
-Więcej informacji zawartych jest w specyfikacji implementacyjnej i raporcie końcowym.
+Więcej informacji zawartych jest w specyfikacjach.
